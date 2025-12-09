@@ -471,7 +471,7 @@ install_singbox_core() {
     fi
     info "正在安装/更新 Sing-box (beta)..."
     #if bash -c "$(curl -fsSL https://sing-box.vercel.app/)" @ install --beta; then
-    if wget https://github.com/SagerNet/sing-box/releases/download/v1.11.15/sing-box-1.11.15-linux-amd64.tar.gz && tar -xzf sing-box-1.11.15-linux-amd64.tar.gz && cd sing-box-1.11.15-linux-amd64 && sudo install -m 755 sing-box /usr/local/bin/; then
+    if wget https://github.com/SagerNet/sing-box/releases/download/v1.11.15/sing-box-1.11.15-linux-amd64.tar.gz && tar -xzf sing-box-1.11.15-linux-amd64.tar.gz && cd sing-box-1.11.15-linux-amd64 && sudo cp ./sing-box /usr/local/bin/ && sudo chmod +x /usr/local/bin/sing-box; then
         success "Sing-box 安装/更新成功。"
         find_and_set_singbox_cmd
         if [ -z "$SINGBOX_CMD" ]; then
